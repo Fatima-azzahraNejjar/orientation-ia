@@ -1,0 +1,16 @@
+{
+  "formations": [
+    {
+      "nom": "Licence Lettres",
+      "requirements": {
+        "scolaire": "Notes 14+ / Test de langue C1",
+        "finance": {"bourse": "Éligible CROUS", "frais": "170€/an"}
+      },
+      "debouches": {
+        "metiers": ["Enseignant", "Éditeur"],
+        "salaire_moyen": "2200€"
+      },
+      "plateformes": ["Parcoursup", "Studielink", "UCAS", "Common App", "Unedassist", "Campus France"]
+    }
+  ]
+}
