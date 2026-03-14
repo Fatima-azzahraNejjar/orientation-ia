@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-import json
 import os
-from app.chatbot import get_ai_recommendation # On l'importe depuis l'autre fichier
+from app.chatbot import get_ai_recommendation
 
 app = FastAPI()
 
@@ -11,10 +10,10 @@ if os.path.exists("static"):
 
 @app.get("/")
 def home():
-    return {"status": "Orientation AI est en ligne", "mode": "Ollama/Llama3"}
+    # On change juste le texte pour savoir qu'on est en mode Rapide/SQL
+    return {"status": "Orientation AI est en ligne", "mode": "SQL + Groq API"}
 
 @app.get("/ask")
 def ask_ai(question: str):
-    # Ici on appelle la fonction qui est dans chatbot.py
     reponse_ia = get_ai_recommendation(question)
     return {"bot": reponse_ia}

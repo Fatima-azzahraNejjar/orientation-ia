@@ -1,29 +1,45 @@
-import ollama
-import json
+import sqlite3
 import os
+from groq import Groq  # pip install groq
+
+# Récupération de la clé (On utilise os.environ pour la sécurité sur Render plus tard)
+# Pour ton test local tout de suite, tu peux laisser ta clé entre guillemets si tu préfères
+client = Groq(api_key="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")
 
 def get_ai_recommendation(user_query):
-    # 1. Le but est de lui faire charger les données depuis le JSON 
-    json_path = os.path.join(os.path.dirname(__file__), "..", "data", "metiers.json")
-    
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    # 1. Connexion à la base SQL
+    db_path = os.path.join(os.path.dirname(__file__), "..", "data", "orientation.db")
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
 
-    # 2. C'est la consigne pour l'IA dcp les gens !!
-    consigne = f"""
-    Tu es un expert en orientation scolaire. 
-    Voici tes données de référence (format JSON) : {data}
-    
-    L'utilisateur te demande : "{user_query}"
-    
-    Réponds en utilisant les informations du JSON. Si la formation demandée est présente, 
-    donne les détails sur les notes, le prix et les plateformes (Parcoursup, UCAS, etc.).
-    Sois encourageant et précis.
-    """
+    # 2. Recherche
+    query_search = f"%{user_query}%"
+    cursor.execute("SELECT * FROM formations WHERE nom LIKE ? OR domaine LIKE ?", (query_search, query_search))
+    rows = cursor.fetchall()
+    conn.close()
 
-    # 3. Appeler Ollama
-    response = ollama.chat(model='llama3', messages=[
-        {'role': 'user', 'content': consigne},
-    ])
+    # 3. Préparation du contexte
+    context = "Données disponibles : " + str(rows) if rows else "Aucune formation spécifique trouvée."
+
+    # 4. Appel à Groq
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": f"""Tu es un expert en orientation bienveillant. 
+                Voici les infos de notre base de données : {context}. 
+                
+                CONSIGNES :
+                1. Si l'utilisateur dit juste 'Bonjour' ou 'Salut', réponds poliment sans mentionner le SQL ou la base de données.
+                2. Si tu trouves des infos dans les données fournies, utilise-les pour conseiller.
+                3. Ne parle JAMAIS de 'requête SQL', 'JSON' ou 'rows' à l'utilisateur."""
+            },
+            {
+                "role": "user",
+                "content": user_query,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
     
-    return response['message']['content']
+    return chat_completion.choices[0].message.content
