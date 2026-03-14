@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 import os
+import sys
+sys.path.append("app")
+
 from chatbot import get_ai_recommendation
 
 app = FastAPI()
