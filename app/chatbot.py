@@ -2,9 +2,8 @@ import sqlite3
 import os
 from groq import Groq  # pip install groq
 
-# Récupération de la clé (On utilise os.environ pour la sécurité sur Render plus tard)
-# Pour ton test local tout de suite, tu peux laisser ta clé entre guillemets si tu préfères
-client = Groq(api_key="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")
+# Bon  jvais trouver un moyen pour la clé après
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 def get_ai_recommendation(user_query):
     # 1. Connexion à la base SQL
