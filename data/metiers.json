@@ -10,7 +10,7 @@
         "metiers": ["Enseignant", "Éditeur"],
         "salaire_moyen": "2200€"
       },
-      "plateformes": ["Parcoursup", "Studielink", "UCAS", "Common App", "Unedassist", "Campus France"]
+      "plateformes": ["Parcoursup", "Studielink", "UCAS", "Common App", "Unedassis", "Campus France"]
     }
   ]
 }

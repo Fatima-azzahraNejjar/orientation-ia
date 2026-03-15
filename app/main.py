@@ -2,7 +2,10 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 import os
 import sys
-sys.path.append("app")
+
+# On remplace tout ton bloc sys.path et try/except par ces deux lignes :
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(current_dir)
 
 from chatbot import get_ai_recommendation
 
