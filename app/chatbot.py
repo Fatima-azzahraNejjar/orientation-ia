@@ -2,19 +2,19 @@ import sqlite3
 import os
 from groq import Groq
 
-# On récupère la clé mais on ne crée pas le client immédiatement
+#  récupère la clé mais on ne crée pas le client immédiatement
 API_KEY = os.environ.get("GROQ_API_KEY")
 
 def get_ai_recommendation(user_query):
-    # On vérifie la clé seulement quand on appelle la fonction
+    # SI LA API KEY MARCHE PAS 
     if not API_KEY:
         return "Erreur : La clé API Groq n'est pas configurée sur le serveur."
     
     client = Groq(api_key=API_KEY)
 
-    # Le reste de ton code SQL (chemin absolu)
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    db_path = os.path.join(base_dir, "data", "orientation.db")
+
+    # VERCEL ROAD
+    db_path = os.path.join(os.path.dirname(__file__), "..", "data", "orientation.db")
         
     # --- DEBUG : Pour vérifier dans ton terminal ---
     print(f" Tentative de connexion à : {db_path}")
