@@ -2,17 +2,20 @@ import sqlite3
 import os
 from groq import Groq
 
-# ENV KEY pour Groq API
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+# On récupère la clé mais on ne crée pas le client immédiatement
+API_KEY = os.environ.get("GROQ_API_KEY")
 
 def get_ai_recommendation(user_query):
-    # 1. Calcul du chemin ABSOLU vers la base de données
-    # On remonte d'un cran depuis 'app/' vers la racine, puis on va dans 'data/'
-    db_path = os.path.join(os.getcwd(), "data", "orientation.db")
+    # On vérifie la clé seulement quand on appelle la fonction
+    if not API_KEY:
+        return "Erreur : La clé API Groq n'est pas configurée sur le serveur."
     
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-    
+    client = Groq(api_key=API_KEY)
+
+    # Le reste de ton code SQL (chemin absolu)
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    db_path = os.path.join(base_dir, "data", "orientation.db")
+        
     # --- DEBUG : Pour vérifier dans ton terminal ---
     print(f" Tentative de connexion à : {db_path}")
     if not os.path.exists(db_path):
