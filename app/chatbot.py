@@ -8,8 +8,10 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 def get_ai_recommendation(user_query):
     # 1. Calcul du chemin ABSOLU vers la base de données
     # On remonte d'un cran depuis 'app/' vers la racine, puis on va dans 'data/'
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    db_path = os.path.join(base_dir, "data", "orientation.db")
+    db_path = os.path.join(os.getcwd(), "data", "orientation.db")
+    
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
     
     # --- DEBUG : Pour vérifier dans ton terminal ---
     print(f" Tentative de connexion à : {db_path}")

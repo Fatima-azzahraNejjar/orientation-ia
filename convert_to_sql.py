@@ -31,11 +31,11 @@ cursor.execute('''
 ''')
 
 # 5. ça insère les données yes
-for item in data:
+for item in data.get('formations', []):
     cursor.execute('''
         INSERT INTO formations (nom, domaine, description) 
         VALUES (?, ?, ?)
-    ''', (item.get('nom'), item.get('domaine'), item.get('description')))
+    ''', (item.get('nom'), "Lettres", str(item.get('requirements')))) # j'ai mis "Lettres" en dur pour le domaine 
 
 conn.commit()
 conn.close()
