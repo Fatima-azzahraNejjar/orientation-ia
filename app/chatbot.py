@@ -2,57 +2,63 @@ import sqlite3
 import os
 from groq import Groq
 
-#  récupère la clé mais on ne crée pas le client immédiatement
+# 1. On récupère la clé API de Vercel
 API_KEY = os.environ.get("GROQ_API_KEY")
 
 def get_ai_recommendation(user_query):
-    # SI LA API KEY MARCHE PAS 
+    # Sécurité : Si la clé n'est pas sur Vercel, on arrête tout proprement
     if not API_KEY:
-        return "Erreur : La clé API Groq n'est pas configurée sur le serveur."
+        return "Erreur : La clé API Groq n'est pas configurée dans les paramètres Vercel."
     
+    # On crée le client Groq ici pour éviter les crashs au démarrage
     client = Groq(api_key=API_KEY)
 
-
-    # VERCEL ROAD
-    db_path = os.path.join(os.path.dirname(__file__), "..", "data", "orientation.db")
-        
-    # --- DEBUG : Pour vérifier dans ton terminal ---
-    print(f" Tentative de connexion à : {db_path}")
-    if not os.path.exists(db_path):
-        print(" ERREUR : Le fichier orientation.db est introuvable à cet endroit !")
-    # -----------------------------------------------
+    # 2. CALCUL DU CHEMIN (Le fix "Blindé" pour Vercel)
+    # On trouve où on est (dossier 'app'), on remonte, puis on va dans 'data'
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(current_dir)
+    db_path = os.path.join(root_dir, "data", "orientation.db")
     
-    print(f"La base existe ? {os.path.exists(db_path)}")
+    # 3. CONNEXION ET RECHERCHE SQL
+    if not os.path.exists(db_path):
+        # Si ça affiche ça, c'est que le dossier 'data' ou le fichier .db n'est pas sur GitHub
+        return "Erreur : La base de données 'orientation.db' est introuvable."
+
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
-    # 2. Recherche (on nettoie un peu la requête)
-    query_search = f"%{user_query}%"
-    cursor.execute("SELECT nom, domaine, description FROM formations WHERE nom LIKE ? OR domaine LIKE ?", (query_search, query_search))
+    # On cherche dans NOM, DOMAINE et DESCRIPTION (pour trouver Unedassis, etc.)
+    search_val = f"%{user_query}%"
+    cursor.execute("""
+        SELECT nom, domaine, description 
+        FROM formations 
+        WHERE nom LIKE ? OR domaine LIKE ? OR description LIKE ?
+    """, (search_val, search_val, search_val))
+    
     rows = cursor.fetchall()
     conn.close()
 
-    # 3. Préparation du contexte pour l'IA
+    # 4. PRÉPARATION DU CONTEXTE
     if rows:
-        context = "Formations trouvées dans notre base :\n"
+        context = "Voici les formations pertinentes trouvées dans notre base :\n"
         for r in rows:
             context += f"- {r[0]} ({r[1]}) : {r[2]}\n"
     else:
-        context = "Aucune formation spécifique trouvée dans notre base SQL pour cette recherche."
+        context = "Aucune formation spécifique trouvée dans la base SQL pour cette requête."
 
-    # 4. Appel à Groq
+    # 5. APPEL À L'IA (GROQ)
     chat_completion = client.chat.completions.create(
         messages=[
             {
                 "role": "system",
-                "content": f"""Tu es un expert en orientation bienveillant. 
-                Utilise UNIQUEMENT ces infos pour tes recommandations techniques : {context}. 
+                "content": f"""Tu es un conseiller d'orientation expert. 
+                Utilise ces données SQL : {context}. 
                 
-                CONSIGNES :
-                1. Sois chaleureux.
-                2. Si l'utilisateur pose une question générale, réponds normalement.
-                3. Si les données fournies sont pertinentes, cite-les précisément.
-                4. NE PARLE JAMAIS de 'base de données', 'SQL' ou 'rows'."""
+                RÈGLES :
+                - Sois encourageant et pro.
+                - Ne mentionne jamais 'SQL', 'base de données' ou 'rows'.
+                - Si les données SQL contiennent des plateformes (ex: UCAS, Unedassis), cite-les !
+                - Si tu ne trouves rien en SQL, réponds avec tes connaissances générales mais précise que c'est en dehors de notre base spécifique."""
             },
             {
                 "role": "user",
