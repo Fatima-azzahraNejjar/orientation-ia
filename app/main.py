@@ -5,7 +5,7 @@ import sys
 
 # Configuration du chemin pour trouver chatbot.py
 current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(current_dir)
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Imports de tes fichiers locaux
 from chatbot import get_ai_recommendation
