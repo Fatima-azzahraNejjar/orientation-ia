@@ -6,6 +6,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="auth-container">
+    <div id="login-form">
+        <h3>Connexion</h3>
+        <input type="text" id="login-username" placeholder="Pseudo">
+        <input type="password" id="login-password" placeholder="Mot de passe">
+        <button onclick="login()">Se connecter</button>
+    </div>
+    <hr>
+    <div id="register-form">
+        <h3>Créer un compte</h3>
+        <input type="text" id="reg-username" placeholder="Pseudo">
+        <input type="password" id="reg-password" placeholder="Mot de passe">
+        <button onclick="register()">S'inscrire</button>
+    </div>
+</div>
+
+<div id="chat-interface" style="display:none;">
+</div>
+
     <div class="chat-container">
         <header>
             <h1>Orientation IA </h1>
@@ -23,5 +42,6 @@
     </div>
 
     <script src="script.js"></script>
+    
 </body>
 </html>
