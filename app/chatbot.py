@@ -13,7 +13,7 @@ def get_ai_recommendation(user_query):
     # On crée le client Groq ici pour éviter les crashs au démarrage
     client = Groq(api_key=API_KEY)
 
-    # 2. CALCUL DU CHEMIN (Le fix "Blindé" pour Vercel)
+    # 2. CALCUL DU CHEMIN (pour Vercel)
     # On trouve où on est (dossier 'app'), on remonte, puis on va dans 'data'
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.dirname(current_dir)
@@ -27,7 +27,7 @@ def get_ai_recommendation(user_query):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
-    # On cherche dans NOM, DOMAINE et DESCRIPTION (pour trouver Unedassis, etc.)
+    # On cherche dans NOM, DOMAINE et DESCRIPTION 
     search_val = f"%{user_query}%"
     cursor.execute("""
         SELECT nom, domaine, description 

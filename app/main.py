@@ -7,7 +7,7 @@ import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# Imports de tes fichiers locaux
+# Imports des fichiers locaux
 from chatbot import get_ai_recommendation
 from database import get_db_connection
 from auth import hash_password, verify_password
@@ -28,14 +28,14 @@ def ask_ai(question: str):
     reponse_ia = get_ai_recommendation(question)
     return {"bot": reponse_ia}
 
-# --- PARTIE INSCRIPTION ---
+# --- PARTIE POUR REGISTER---
 @app.post("/register")
 async def register(username: str = Form(...), password: str = Form(...)):
     conn = get_db_connection()
     cursor = conn.cursor()
     
     try:
-        # On vérifie si le pseudo existe déjà
+        # Vérifie Si les pseudo existe déjà ...
         cursor.execute("SELECT id FROM users WHERE username = ?", (username,))
         if cursor.fetchone():
             raise HTTPException(status_code=400, detail="Ce pseudo est déjà pris !")
@@ -43,7 +43,7 @@ async def register(username: str = Form(...), password: str = Form(...)):
         # Hachage du mot de passe (via auth.py)
         hashed_pwd = hash_password(password)
         
-        # Insertion du nouvel utilisateur
+        # Insertion du nouvel utilisateur 
         cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", 
                        (username, hashed_pwd))
         conn.commit()
@@ -53,7 +53,7 @@ async def register(username: str = Form(...), password: str = Form(...)):
     finally:
         conn.close()
 
-# --- PARTIE CONNEXION ---
+# --- PARTIE POUR LOGIN ---
 @app.post("/login")
 async def login(username: str = Form(...), password: str = Form(...)):
     conn = get_db_connection()

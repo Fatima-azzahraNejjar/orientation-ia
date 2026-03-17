@@ -7,14 +7,14 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "orientation.db"
 def get_db_connection():
     """Fonction que tu utiliseras partout pour te connecter au SQL"""
     conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row # Permet d'accéder aux colonnes par nom (ex: row['nom'])
+    conn.row_factory = sqlite3.Row # Permet d'accéder aux colonnes par nom (concerne le SQL)
     return conn
 
 def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    # Tes tables (on garde tout, c'est parfait)
+    # LES tables SQL (on garde tout, c'est parfait)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS formations (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

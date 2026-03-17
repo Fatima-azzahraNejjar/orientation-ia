@@ -73,7 +73,7 @@ async function sendMessage() {
         const response = await fetch(`/ask?question=${encodeURIComponent(message)}`);
         const data = await response.json();
 
-        // 4. Afficher la réponse
+        // 4. AFFICHE LA RéPONSE DE L'ia
         document.getElementById(loadingId).innerHTML = `<b>IA:</b> ${data.bot}`;
     } catch (error) {
         document.getElementById(loadingId).innerText = "Erreur : Impossible de joindre l'IA.";

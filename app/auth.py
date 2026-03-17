@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 
-# On utilise bcrypt, c'est le standard pour la sécurité
+# bcrypt, c'est le standard pour la sécurité des mots de passes
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str):

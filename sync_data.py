@@ -23,7 +23,7 @@ def sync_json_to_sql():
                 # On formate la description
                 desc = f"Salaire: {item['debouches']['salaire_moyen']}. Plateformes: {', '.join(item['plateformes'])}"
                 
-                # INSERT OR IGNORE : Si le métier existe déjà (doublon ou SQL pur), il ne fait rien
+                # INSERT OR IGNORE : Si le métier existe déjà , il ne fait rien parce qu'on a SQL ET JSON, donc on veut éviter les doublons
                 cursor.execute('''
                     INSERT OR IGNORE INTO formations (nom, domaine, description) 
                     VALUES (?, ?, ?)
@@ -33,11 +33,11 @@ def sync_json_to_sql():
                     count += 1
             
             conn.commit()
-            print(f"✅ {count} nouveaux métiers du JSON ajoutés au SQL.")
+            print(f" {count} nouveaux métiers du JSON ajoutés au SQL.")
         except Exception as e:
-            print(f"⚠️ Erreur lors de la lecture du JSON : {e}")
+            print(f" Erreur lors de la lecture du JSON : {e}")
     else:
-        print("⚠️ Fichier metiers.json introuvable.")
+        print("Fichier metiers.json introuvable.")
 
     conn.close()
 

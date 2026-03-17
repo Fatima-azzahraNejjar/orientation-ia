@@ -1,7 +1,7 @@
 import json
 import sqlite3
 import os
-
+#Bon ce fichier il sert juste à remplir la base SQL à partir du JSON, on n'en auras plus besoin après (ps: ce fichier ne sert plus vrm à grand chose. Mais ne le supprimmez pas)
 json_path = "data/metiers.json"
 db_path = "data/orientation.db"
 
