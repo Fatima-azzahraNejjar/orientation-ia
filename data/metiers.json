@@ -1,3 +1,1069 @@
+[
+  {
+	"id": 1,
+	"metier": "Médecin généraliste",
+	"secteur": "Santé",
+	"description": "Diagnostic et traitement des maladies courantes, suivi des patients, orientation vers des spécialistes.",
+	"niveau_requis": "Bac+7 (Doctorat en Médecine)",
+	"duree_etudes": "7 ans",
+	"salaire_mensuel_mad": { "min": 15000, "max": 40000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse automatique dans les facultés publiques pour étudiants marocains remplissant les conditions de revenus familiaux (< 36 000 MAD/an). Montant : 750 à 1 500 MAD/mois.",
+	"debouches": ["Secteur public (CHU, hôpitaux régionaux)", "Cabinet libéral", "Secteur privé (cliniques)"],
+	"ecoles": [
+  	{
+    	"nom": "Faculté de Médecine et de Pharmacie de Rabat (FMPR)",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://fmpr.um5.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Mathématiques ou Sciences Expérimentales avec mention Bien ou Très Bien", "Concours national d'accès aux études médicales"],
+      	"concours": true,
+      	"description_concours": "Concours national organisé chaque année après le BAC. Épreuves : SVT, Physique-Chimie, Mathématiques. Très sélectif (~3 000 places pour ~60 000 candidats).",
+      	"numerus_clausus": "~600 places/an"
+    	}
+  	},
+  	{
+    	"nom": "Faculté de Médecine et de Pharmacie de Casablanca (FMPC)",
+    	"ville": "Casablanca",
+    	"type": "Public",
+    	"site_web": "https://fmpc.unh.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Mathématiques ou Sciences Expérimentales", "Concours national d'accès"],
+      	"concours": true,
+      	"description_concours": "Même concours national que FMPR. Résultats classés nationalement, affectation selon le rang.",
+      	"numerus_clausus": "~600 places/an"
+    	}
+  	},
+  	{
+    	"nom": "Faculté de Médecine et de Pharmacie de Fès (FMPF)",
+    	"ville": "Fès",
+    	"type": "Public",
+    	"site_web": "https://fmph.usmba.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Mathématiques ou Sciences Expérimentales", "Concours national d'accès"],
+      	"concours": true,
+      	"description_concours": "Même concours national.",
+      	"numerus_clausus": "~400 places/an"
+    	}
+  	},
+  	{
+    	"nom": "Faculté de Médecine et de Pharmacie de Marrakech (FMPM)",
+    	"ville": "Marrakech",
+    	"type": "Public",
+    	"site_web": "https://fmpm.uca.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Mathématiques ou Sciences Expérimentales", "Concours national d'accès"],
+      	"concours": true,
+      	"description_concours": "Même concours national.",
+      	"numerus_clausus": "~400 places/an"
+    	}
+  	}
+	],
+	"remarques": "Après le Doctorat, possibilité de spécialisation via le Résidanat (concours supplémentaire, 4-5 ans de plus)."
+  },
+  {
+	"id": 2,
+	"metier": "Médecin spécialiste",
+	"secteur": "Santé",
+	"description": "Médecin généraliste ayant suivi une spécialisation (cardiologie, pédiatrie, chirurgie, psychiatrie...).",
+	"niveau_requis": "Bac+11 (Doctorat + Résidanat)",
+	"duree_etudes": "11-12 ans",
+	"salaire_mensuel_mad": { "min": 25000, "max": 80000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse pendant le Doctorat. Indemnité de résidanat (~3 000-5 000 MAD/mois).",
+	"debouches": ["CHU", "Cliniques privées spécialisées", "Cabinet libéral"],
+	"ecoles": [
+  	{
+    	"nom": "CHU Rabat / Casablanca / Fès / Marrakech (Résidanat)",
+    	"ville": "Plusieurs villes",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Doctorat en Médecine obtenu", "Concours national de Résidanat"],
+      	"concours": true,
+      	"description_concours": "Concours national très sélectif après le Doctorat. Épreuves spécifiques à chaque spécialité. Affectation dans les CHU pour la formation.",
+      	"numerus_clausus": "~500-700 postes/an toutes spécialités"
+    	}
+  	}
+	],
+	"remarques": "Les spécialités les plus demandées : cardiologie, chirurgie générale, anesthésie-réanimation, pédiatrie, gynécologie-obstétrique."
+  },
+  {
+	"id": 3,
+	"metier": "Pharmacien",
+	"secteur": "Santé",
+	"description": "Délivrance des médicaments, conseil aux patients, gestion d'officine ou travail en industrie pharmaceutique.",
+	"niveau_requis": "Bac+6 (Doctorat en Pharmacie)",
+	"duree_etudes": "6 ans",
+	"salaire_mensuel_mad": { "min": 12000, "max": 35000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Mêmes conditions que médecine. Bourse dans les facultés publiques.",
+	"debouches": ["Officine privée", "Industrie pharmaceutique (Sothema, Cooper Maroc)", "Pharmacie hospitalière"],
+	"ecoles": [
+  	{
+    	"nom": "FMPR – filière Pharmacie (Rabat)",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://fmpr.um5.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Mathématiques ou Sciences Expérimentales", "Même concours national que médecine"],
+      	"concours": true,
+      	"description_concours": "Concours commun médecine/pharmacie. Affectation selon rang et choix.",
+      	"numerus_clausus": "~250 places/an toutes facultés"
+    	}
+  	},
+  	{
+    	"nom": "FMPC – filière Pharmacie (Casablanca)",
+    	"ville": "Casablanca",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC Sciences", "Concours national"],
+      	"concours": true,
+      	"description_concours": "Idem concours médecine/pharmacie.",
+      	"numerus_clausus": "~100 places/an"
+    	}
+  	}
+	],
+	"remarques": "Inscription obligatoire à l'Ordre National des Pharmaciens du Maroc (ONPM) pour exercer."
+  },
+  {
+	"id": 4,
+	"metier": "Infirmier",
+	"secteur": "Santé",
+	"description": "Soins infirmiers, surveillance des patients, administration des traitements sous supervision médicale.",
+	"niveau_requis": "Bac+3 (Licence en Sciences Infirmières)",
+	"duree_etudes": "3 ans",
+	"salaire_mensuel_mad": { "min": 4000, "max": 8000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse accordée dans les ISPITS publics. Conditions de ressources.",
+	"debouches": ["Hôpitaux publics", "Cliniques privées", "Secteur associatif/humanitaire", "À l'étranger (Europe, Golfe)"],
+	"ecoles": [
+  	{
+    	"nom": "ISPITS Rabat",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://ispits.sante.gov.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Expérimentales ou équivalent", "Concours d'entrée ISPITS", "Visite médicale"],
+      	"concours": true,
+      	"description_concours": "Concours écrit (SVT, Physique-Chimie, Français) + entretien. Organisé par le Ministère de la Santé.",
+      	"numerus_clausus": "Variable selon région"
+    	}
+  	},
+  	{
+    	"nom": "ISPITS Casablanca",
+    	"ville": "Casablanca",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC Sciences Expérimentales", "Concours national ISPITS"],
+      	"concours": true,
+      	"description_concours": "Même concours national ISPITS.",
+      	"numerus_clausus": "Variable"
+    	}
+  	},
+  	{
+    	"nom": "ISPITS Fès, Meknès, Agadir, Oujda, Marrakech, Tétouan...",
+    	"ville": "Réseau national",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC Sciences", "Concours ISPITS"],
+      	"concours": true,
+      	"description_concours": "Concours régionaux organisés par le Ministère de la Santé.",
+      	"numerus_clausus": "Variable"
+    	}
+  	}
+	],
+	"remarques": "Forte migration vers l'Europe et les pays du Golfe. Le Maroc fait face à une pénurie d'infirmiers."
+  },
+  {
+	"id": 5,
+	"metier": "Kinésithérapeute",
+	"secteur": "Santé",
+	"description": "Rééducation fonctionnelle, traitement des troubles musculo-squelettiques, suivi post-opératoire.",
+	"niveau_requis": "Bac+4 (Diplôme de Kinésithérapie)",
+	"duree_etudes": "4 ans",
+	"salaire_mensuel_mad": { "min": 6000, "max": 20000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les instituts publics rattachés au Ministère de la Santé.",
+	"debouches": ["Cabinet libéral", "Hôpitaux", "Centres de rééducation", "Clubs sportifs professionnels"],
+	"ecoles": [
+  	{
+    	"nom": "ISPITS – filière Kinésithérapie",
+    	"ville": "Rabat, Casablanca",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Expérimentales", "Concours ISPITS filière kiné"],
+      	"concours": true,
+      	"description_concours": "Concours écrit + test physique dans certains instituts.",
+      	"numerus_clausus": "~50-80 places/an"
+    	}
+  	},
+  	{
+    	"nom": "Écoles privées de Kinésithérapie (ISKR, IKR...)",
+    	"ville": "Casablanca, Rabat",
+    	"type": "Privé",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Exp.", "Dossier + entretien"],
+      	"concours": false,
+      	"description_concours": "Sélection sur dossier et entretien motivationnel.",
+      	"numerus_clausus": "Variable (40 000 – 60 000 MAD/an)"
+    	}
+  	}
+	],
+	"remarques": "Très libéral au Maroc avec forte demande dans les grandes villes. Excellente réputation à l'export."
+  },
+  {
+	"id": 6,
+	"metier": "Vétérinaire",
+	"secteur": "Santé",
+	"description": "Soins aux animaux, santé publique vétérinaire, inspection des aliments d'origine animale.",
+	"niveau_requis": "Bac+6 (Doctorat Vétérinaire)",
+	"duree_etudes": "6 ans",
+	"salaire_mensuel_mad": { "min": 10000, "max": 30000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse à l'IAV Hassan II pour les étudiants éligibles.",
+	"debouches": ["Clinique vétérinaire privée", "ONSSA (Office National de Sécurité Sanitaire)", "Élevage industriel", "OCP / Agro-industrie"],
+	"ecoles": [
+  	{
+    	"nom": "IAV Hassan II – Département Médecine Vétérinaire",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.iav.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE (BCPST de préférence, PC accepté)", "Concours d'entrée IAV ou CNC"],
+      	"concours": true,
+      	"description_concours": "Concours propre IAV : SVT, Physique-Chimie, Maths, Français. Ou via CNC.",
+      	"numerus_clausus": "~60 places/an"
+    	}
+  	}
+	],
+	"remarques": "Seule école vétérinaire publique au Maroc. Inscription à l'Ordre des Médecins Vétérinaires obligatoire."
+  },
+  {
+	"id": 7,
+	"metier": "Ingénieur informatique",
+	"secteur": "Technologie",
+	"description": "Conception, développement et maintenance de systèmes informatiques, logiciels et infrastructures numériques.",
+	"niveau_requis": "Bac+5 (Diplôme d'Ingénieur)",
+	"duree_etudes": "5 ans (2 ans CPGE + 3 ans cycle ingénieur)",
+	"salaire_mensuel_mad": { "min": 8000, "max": 30000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les grandes écoles publiques (ENSIAS, EMI, ENSA). Condition de ressources familiales.",
+	"debouches": ["SSII / ESN (CGI, Capgemini, IBM Maroc)", "Multinationales", "Startups", "OCP, IAM, Attijariwafa", "Freelance / Remote"],
+	"ecoles": [
+  	{
+    	"nom": "ENSIAS – École Nationale Supérieure d'Informatique et d'Analyse des Systèmes",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://ensias.um5.ac.ma",
+    	"admission": {
+      	"conditions": ["2 années de CPGE (MP, PC, TSI) ou équivalent L2/L3 scientifique", "Concours national commun CNC"],
+      	"concours": true,
+      	"description_concours": "CNC : Concours National Commun des grandes écoles d'ingénieurs. Épreuves : Maths, Physique, Informatique. Très sélectif.",
+      	"numerus_clausus": "~150 places/an"
+    	}
+  	},
+  	{
+    	"nom": "EMI – École Mohammadia d'Ingénieurs",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://emi.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE ou L2/L3 scientifique", "Concours CNC"],
+      	"concours": true,
+      	"description_concours": "L'une des plus prestigieuses écoles d'ingénieurs du Maroc. Filières : GI, GR, GM, GE...",
+      	"numerus_clausus": "~300 places/an (toutes filières)"
+    	}
+  	},
+  	{
+    	"nom": "ENSA – Écoles Nationales des Sciences Appliquées (réseau de 13 écoles)",
+    	"ville": "Agadir, Béni Mellal, El Jadida, Fès, Kénitra, Khouribga, Laâyoune, Marrakech, Meknès, Oujda, Safi, Tanger, Tétouan",
+    	"type": "Public",
+    	"site_web": "https://ensa.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE ou BAC avec mention TB + dossier selon l'ENSA", "CNC ou concours propre ENSA"],
+      	"concours": true,
+      	"description_concours": "Voie CPGE : CNC. Voie Bac direct : concours propre sur dossier scolaire + tests.",
+      	"numerus_clausus": "~100-200 places/école"
+    	}
+  	},
+  	{
+    	"nom": "INPT – Institut National des Postes et Télécommunications",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.inpt.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE (MP, PC, TSI)", "Concours CNC"],
+      	"concours": true,
+      	"description_concours": "Spécialisé Télécoms, Réseaux, Cybersécurité. Via CNC.",
+      	"numerus_clausus": "~120 places/an"
+    	}
+  	},
+  	{
+    	"nom": "UM6P – Université Mohammed VI Polytechnique",
+    	"ville": "Ben Guerir",
+    	"type": "Semi-public",
+    	"site_web": "https://www.um6p.ma",
+    	"admission": {
+      	"conditions": ["CPGE ou Bac avec excellence", "Concours propre UM6P + entretien"],
+      	"concours": true,
+      	"description_concours": "Concours écrit + entretien. Bourses d'excellence disponibles. Frais réduits pour boursiers.",
+      	"numerus_clausus": "~100 places/an"
+    	}
+  	},
+  	{
+    	"nom": "Écoles privées (UIR, EMSI, SUPMTI, EIDIA, HEM Tech...)",
+    	"ville": "Rabat, Casablanca, Marrakech",
+    	"type": "Privé",
+    	"admission": {
+      	"conditions": ["BAC avec mention ou L2 scientifique", "Dossier + entretien + tests"],
+      	"concours": false,
+      	"description_concours": "Sélection sur dossier. Frais : 30 000 – 80 000 MAD/an.",
+      	"numerus_clausus": "Variable"
+    	}
+  	}
+	],
+	"remarques": "Le Maroc produit ~9 000 ingénieurs/an. Fort besoin en IA, cybersécurité et cloud computing. Les salaires augmentent rapidement avec l'expérience."
+  },
+  {
+	"id": 8,
+	"metier": "Développeur web / mobile",
+	"secteur": "Technologie",
+	"description": "Création et maintenance de sites web, applications mobiles et interfaces numériques.",
+	"niveau_requis": "Bac+2 minimum ou autodidacte avec portfolio solide",
+	"duree_etudes": "2-3 ans (ou bootcamp 6-12 mois)",
+	"salaire_mensuel_mad": { "min": 5000, "max": 22000 },
+	"bourse_etat": false,
+	"conditions_bourse": "Pas de bourse spécifique. Formations OFPPT subventionnées par l'État.",
+	"debouches": ["Agences web", "Startups marocaines", "Offshoring (CGI, Accenture)", "Freelance / Remote international"],
+	"ecoles": [
+  	{
+    	"nom": "OFPPT – BTS Développement Informatique / Technicien Spécialisé",
+    	"ville": "National (tous centres OFPPT)",
+    	"type": "Public",
+    	"site_web": "https://www.ofppt.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat (toutes filières)", "Inscription sur la plateforme OFPPT"],
+      	"concours": false,
+      	"description_concours": "Sélection sur dossier scolaire. Inscription en ligne. Très accessible et quasi-gratuit.",
+      	"numerus_clausus": "Large capacité d'accueil nationale"
+    	}
+  	},
+  	{
+    	"nom": "YouCode (UM6P) – École de coding gratuite",
+    	"ville": "Agadir, Safi, Oujda, Youssoufia",
+    	"type": "Public/Privé",
+    	"site_web": "https://youcode.ma",
+    	"admission": {
+      	"conditions": ["Tout niveau d'études (pas de diplôme requis)", "Test de logique en ligne"],
+      	"concours": true,
+      	"description_concours": "Test de logique et raisonnement (Piscine de sélection). 100% gratuit. Formation par la pratique (peer-to-peer).",
+      	"numerus_clausus": "~300 places/an"
+    	}
+  	},
+  	{
+    	"nom": "1337 – École de coding (modèle 42 Paris)",
+    	"ville": "Ben Guerir, Khouribga",
+    	"type": "Semi-public",
+    	"site_web": "https://1337.ma",
+    	"admission": {
+      	"conditions": ["18-30 ans", "Pas de diplôme requis", "Test en ligne + Piscine d'un mois sur place"],
+      	"concours": true,
+      	"description_concours": "Piscine intensive d'un mois pour évaluer logique, persévérance et collaboration. 100% gratuit. Sans enseignants (apprentissage par projets).",
+      	"numerus_clausus": "~150 places/an"
+    	}
+  	}
+	],
+	"remarques": "Portfolio et projets GitHub > diplôme. Les développeurs avec React/Node/Flutter trouvent rapidement du travail. Très fort marché remote."
+  },
+  {
+	"id": 9,
+	"metier": "Data Scientist / Ingénieur IA",
+	"secteur": "Technologie",
+	"description": "Analyse de grandes masses de données, construction de modèles d'apprentissage automatique, aide à la décision.",
+	"niveau_requis": "Bac+5 (Master ou Ingénieur spécialisé IA/Data)",
+	"duree_etudes": "5 ans",
+	"salaire_mensuel_mad": { "min": 12000, "max": 45000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les Masters publics (Universités Mohammed V, Hassan II). Conditions de ressources.",
+	"debouches": ["Attijariwafa Bank", "OCP Group", "IAM", "Multinationales (IBM, Oracle, SAP)", "Startups IA"],
+	"ecoles": [
+  	{
+    	"nom": "UM6P – Filière Data Science & AI",
+    	"ville": "Ben Guerir",
+    	"type": "Semi-public",
+    	"site_web": "https://www.um6p.ma",
+    	"admission": {
+      	"conditions": ["Licence ou Diplôme d'Ingénieur en Informatique/Maths/Stats", "Dossier + entretien"],
+      	"concours": false,
+      	"description_concours": "Sélection sur excellence académique + entretien. Bourses d'excellence disponibles.",
+      	"numerus_clausus": "~40-60 places/an"
+    	}
+  	},
+  	{
+    	"nom": "ENSIAS – Master Data Engineering & Business Intelligence",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Licence Informatique ou Diplôme d'Ingénieur", "Concours d'entrée en Master"],
+      	"concours": true,
+      	"description_concours": "Concours écrit et oral. Très sélectif.",
+      	"numerus_clausus": "~30 places/an"
+    	}
+  	},
+  	{
+    	"nom": "FSR / FST (Universités publiques) – Master Informatique / Big Data",
+    	"ville": "Rabat, Fès, Agadir...",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Licence Informatique ou Maths-Info", "Sélection sur dossier"],
+      	"concours": false,
+      	"description_concours": "Sélection sur dossier académique et notes de Licence.",
+      	"numerus_clausus": "~25-40 places/Master"
+    	}
+  	}
+	],
+	"remarques": "Métier en très forte croissance. Les certifications AWS, Google Cloud, Azure + Kaggle valorisent fortement le profil."
+  },
+  {
+	"id": 10,
+	"metier": "Cybersécurité",
+	"secteur": "Technologie",
+	"description": "Protection des systèmes informatiques, détection et réponse aux cyberattaques, audit de sécurité.",
+	"niveau_requis": "Bac+5 (Master ou Ingénieur spécialisé Cybersécurité)",
+	"duree_etudes": "5 ans",
+	"salaire_mensuel_mad": { "min": 12000, "max": 45000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les écoles publiques d'ingénieurs et Masters publics.",
+	"debouches": ["DGSSI (Direction Générale de la Sécurité des Systèmes d'Information)", "Banques", "Télécoms", "Cabinets de conseil sécurité", "OTAN / Organisations internationales"],
+	"ecoles": [
+  	{
+    	"nom": "INPT – filière Cybersécurité & Réseaux",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.inpt.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE (MP, PC, TSI)", "Concours CNC"],
+      	"concours": true,
+      	"description_concours": "Via CNC. L'INPT est la référence marocaine pour la cybersécurité.",
+      	"numerus_clausus": "~80 places/an"
+    	}
+  	},
+  	{
+    	"nom": "ENSIAS – filière Sécurité des Systèmes d'Information",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["CPGE ou L3 Informatique", "CNC ou concours ENSIAS"],
+      	"concours": true,
+      	"description_concours": "Concours CNC ou concours propre pour les lauréats de Licence.",
+      	"numerus_clausus": "~40 places/an"
+    	}
+  	}
+	],
+	"remarques": "Certifications CEH, CISSP, OSCP très valorisées. Le Maroc développe une stratégie nationale de cybersécurité (maCERT)."
+  },
+  {
+	"id": 11,
+	"metier": "Professeur du secondaire",
+	"secteur": "Éducation",
+	"description": "Enseignement dans les collèges et lycées publics ou privés dans une discipline donnée.",
+	"niveau_requis": "Licence (Bac+3) + formation pédagogique (CRMEF)",
+	"duree_etudes": "3 ans Licence + 1 an CRMEF",
+	"salaire_mensuel_mad": { "min": 5500, "max": 10000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Rémunération (~3 500 MAD/mois) pendant la formation CRMEF en tant que fonctionnaire stagiaire.",
+	"debouches": ["Éducation Nationale (secteur public)", "Enseignement privé", "Cours particuliers / soutien scolaire"],
+	"ecoles": [
+  	{
+    	"nom": "CRMEF – Centres Régionaux des Métiers de l'Éducation et de la Formation (réseau national)",
+    	"ville": "Rabat, Casablanca, Fès, Marrakech, Agadir, Meknès, Oujda, Tanger, Laâyoune, Guelmim, Béni Mellal, Dakhla",
+    	"type": "Public",
+    	"site_web": "https://crmef.men.gov.ma",
+    	"admission": {
+      	"conditions": ["Licence dans la discipline (Maths, Physique, SVT, Lettres, Histoire, Anglais...)", "Concours national de recrutement des enseignants stagiaires", "Nationalité marocaine"],
+      	"concours": true,
+      	"description_concours": "Concours national organisé par le Ministère de l'Éducation Nationale. Épreuve écrite dans la discipline + épreuve de culture pédagogique + oral. Recrutement variable selon les besoins du Ministère.",
+      	"numerus_clausus": "Variable selon les besoins (souvent 5 000 – 15 000 postes/an)"
+    	}
+  	},
+  	{
+    	"nom": "ENS – Écoles Normales Supérieures (formation initiale pour enseignants du supérieur)",
+    	"ville": "Rabat, Meknès, Fès, Marrakech, Casablanca, Oujda, Agadir, Tétouan",
+    	"type": "Public",
+    	"site_web": "https://ens.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat", "Concours national ENS"],
+      	"concours": true,
+      	"description_concours": "Concours après le Bac. Formation de 4 ans (Licence + Master). Bourse + hébergement fournis dans certaines ENS.",
+      	"numerus_clausus": "~200 places/ENS/an"
+    	}
+  	}
+	],
+	"remarques": "Fort recrutement prévu jusqu'en 2030 (plan de remplacement des départs à la retraite). Possibilité d'avancement vers le grade de Professeur Principal."
+  },
+  {
+	"id": 12,
+	"metier": "Professeur universitaire / chercheur",
+	"secteur": "Éducation",
+	"description": "Enseignement dans les universités, production de recherche scientifique, encadrement d'étudiants.",
+	"niveau_requis": "Doctorat (Bac+8) + Habilitation à Diriger des Recherches (HDR) pour certains postes",
+	"duree_etudes": "8+ ans",
+	"salaire_mensuel_mad": { "min": 12000, "max": 25000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourses de thèse (CNRST) : ~4 000 MAD/mois pendant 3 ans. Bourses de mobilité à l'étranger disponibles.",
+	"debouches": ["Universités publiques", "UM6P", "Centres de recherche (CNRST, INRA, IRESEN)", "Organismes internationaux"],
+	"ecoles": [
+  	{
+    	"nom": "CNRST – Centre National pour la Recherche Scientifique et Technique (bourses doctorat)",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.cnrst.ma",
+    	"admission": {
+      	"conditions": ["Master Recherche ou équivalent", "Avoir un directeur de thèse", "Appel à candidatures CNRST"],
+      	"concours": false,
+      	"description_concours": "Candidature sur dossier pour les bourses de thèse. Très compétitif.",
+      	"numerus_clausus": "~400 bourses/an"
+    	}
+  	}
+	],
+	"remarques": "Concours de recrutement des enseignants-chercheurs organisé par le Ministère de l'Enseignement Supérieur. Nécessite un Doctorat et des publications scientifiques."
+  },
+  {
+	"id": 13,
+	"metier": "Avocat",
+	"secteur": "Droit & Justice",
+	"description": "Défense des intérêts des clients devant les tribunaux, conseil juridique, rédaction d'actes juridiques.",
+	"niveau_requis": "Bac+5 (Master en Droit) + stage au barreau (2 ans)",
+	"duree_etudes": "5 ans + 2 ans de stage",
+	"salaire_mensuel_mad": { "min": 8000, "max": 60000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse universitaire dans les facultés de droit publiques.",
+	"debouches": ["Cabinet d'avocat libéral", "Grandes entreprises (juriste interne)", "ONG / Associations droits de l'Homme"],
+	"ecoles": [
+  	{
+    	"nom": "FSJES – Faculté des Sciences Juridiques, Économiques et Sociales de Rabat (UM5)",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://fsjp.um5.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat (toutes filières)", "Inscription universitaire libre pour la Licence", "Sélection sur dossier + concours pour le Master"],
+      	"concours": false,
+      	"description_concours": "Accès libre en Licence (1ère, 2ème, 3ème année). Pour le Master : sélection sur dossier + entretien ou concours écrit.",
+      	"numerus_clausus": "Licence : accès libre / Master : ~50 places"
+    	}
+  	},
+  	{
+    	"nom": "FSJES Casablanca (UH2)",
+    	"ville": "Casablanca",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Baccalauréat", "Inscription universitaire"],
+      	"concours": false,
+      	"description_concours": "Accès libre en Licence.",
+      	"numerus_clausus": "Accès libre"
+    	}
+  	},
+  	{
+    	"nom": "FSJES Fès, Meknès, Agadir, Marrakech, Oujda, Tanger",
+    	"ville": "Plusieurs villes",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Baccalauréat", "Inscription universitaire"],
+      	"concours": false,
+      	"description_concours": "Accès libre. Réseau de facultés de droit dans toutes les grandes villes.",
+      	"numerus_clausus": "Accès libre"
+    	}
+  	}
+	],
+	"remarques": "Après le Master : stage obligatoire de 2 ans au barreau + examen de fin de stage + inscription au Barreau de la ville d'exercice."
+  },
+  {
+	"id": 14,
+	"metier": "Magistrat / Juge",
+	"secteur": "Droit & Justice",
+	"description": "Rendre la justice au nom de l'État, instruire les affaires, statuer sur les litiges civils et pénaux.",
+	"niveau_requis": "Bac+5 (Master Droit) + concours IFCS + 2 ans formation",
+	"duree_etudes": "7 ans",
+	"salaire_mensuel_mad": { "min": 12000, "max": 30000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Rémunération pendant la formation à l'IFCS (statut de fonctionnaire stagiaire ~5 000 MAD/mois).",
+	"debouches": ["Tribunaux de première instance", "Cours d'appel", "Cour Suprême (Cour de Cassation)", "Parquet"],
+	"ecoles": [
+  	{
+    	"nom": "IFCS – Institut de Formation des Conseillers et Juges (anciennement ENAM Rabat)",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.ifcs.ma",
+    	"admission": {
+      	"conditions": ["Licence en Droit minimum (certains postes exigent un Master)", "Nationalité marocaine", "Casier judiciaire vierge", "Aptitude physique", "Limite d'âge : 40 ans", "Concours national IFCS"],
+      	"concours": true,
+      	"description_concours": "Concours écrit très sélectif : Droit civil, Droit pénal, Droit administratif, Procédure civile et pénale + oral. ~50 lauréats/an pour des milliers de candidats.",
+      	"numerus_clausus": "~50-100 places/an"
+    	}
+  	}
+	],
+	"remarques": "La magistrature est l'un des corps les plus sélectifs et les plus stables au Maroc. Inamovibilité garantie par la Constitution."
+  },
+  {
+	"id": 15,
+	"metier": "Notaire",
+	"secteur": "Droit & Justice",
+	"description": "Rédaction d'actes authentiques (contrats de vente, successions, mariages), conseil juridique officiel.",
+	"niveau_requis": "Bac+5 (Master Droit notarial ou équivalent) + stage notarial + concours",
+	"duree_etudes": "5 ans + 2 ans de stage",
+	"salaire_mensuel_mad": { "min": 20000, "max": 100000 },
+	"bourse_etat": false,
+	"conditions_bourse": "Pas de bourse spécifique pour le stage notarial. Bourse universitaire possible en Master.",
+	"debouches": ["Étude notariale libérale (propre cabinet)", "Collaborateur notarial"],
+	"ecoles": [
+  	{
+    	"nom": "Facultés de Droit – Master Droit Privé / Droit Notarial",
+    	"ville": "Rabat, Casablanca, Fès, Marrakech",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Licence en Droit", "Sélection sur dossier pour le Master"],
+      	"concours": false,
+      	"description_concours": "Sélection sur notes de Licence. Puis stage notarial de 2 ans agréé par la Chambre des Notaires.",
+      	"numerus_clausus": "Master : ~30-50 places"
+    	}
+  	}
+	],
+	"remarques": "Nombre de notaires limité par l'État. Très lucratif mais difficile d'accès. Nomination par décret royal."
+  },
+  {
+	"id": 16,
+	"metier": "Architecte",
+	"secteur": "BTP & Architecture",
+	"description": "Conception de bâtiments, plans architecturaux, suivi de chantiers, obtention des permis de construire.",
+	"niveau_requis": "Bac+5 (Diplôme National d'Architecte)",
+	"duree_etudes": "5 ans",
+	"salaire_mensuel_mad": { "min": 8000, "max": 35000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse à l'ENAU et ENA pour les étudiants éligibles.",
+	"debouches": ["Cabinet d'architecte libéral", "Promoteurs immobiliers (Addoha, Al Omrane)", "Communes et collectivités", "Architetcure d'intérieur"],
+	"ecoles": [
+  	{
+    	"nom": "ENAU – École Nationale d'Architecture et d'Urbanisme",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.enau.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat (toutes filières, priorité Sciences)", "Concours d'entrée ENAU : épreuve graphique + culture générale"],
+      	"concours": true,
+      	"description_concours": "Concours : dessin technique et artistique, composition graphique, culture architecturale + entretien. Très sélectif (~120 places pour ~5 000 candidats).",
+      	"numerus_clausus": "~120 places/an"
+    	}
+  	},
+  	{
+    	"nom": "ENA Marrakech – École Nationale d'Architecture",
+    	"ville": "Marrakech",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC", "Concours national d'architecture ENA"],
+      	"concours": true,
+      	"description_concours": "Concours similaire à l'ENAU.",
+      	"numerus_clausus": "~80 places/an"
+    	}
+  	},
+  	{
+    	"nom": "Écoles d'architecture privées (ESAB, etc.)",
+    	"ville": "Casablanca, Rabat",
+    	"type": "Privé",
+    	"admission": {
+      	"conditions": ["BAC", "Dossier + tests graphiques"],
+      	"concours": false,
+      	"description_concours": "Admission sur dossier et épreuve graphique.",
+      	"numerus_clausus": "Variable (40 000 – 80 000 MAD/an)"
+    	}
+  	}
+	],
+	"remarques": "Inscription obligatoire à l'Ordre National des Architectes du Maroc (ONAM) pour exercer. Boom immobilier lié à la Coupe du Monde 2030."
+  },
+  {
+	"id": 17,
+	"metier": "Ingénieur génie civil / BTP",
+	"secteur": "BTP & Architecture",
+	"description": "Conception et supervision de projets de construction : bâtiments, ponts, routes, barrages, tunnels.",
+	"niveau_requis": "Bac+5 (Diplôme d'Ingénieur Génie Civil)",
+	"duree_etudes": "5 ans",
+	"salaire_mensuel_mad": { "min": 8000, "max": 25000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les ENSA et EHTP pour les étudiants éligibles.",
+	"debouches": ["ONCF", "ADM (Autoroutes du Maroc)", "ONEE", "Entreprises BTP (Bouygues, SOMAGEC, CPC)", "Bureaux d'études"],
+	"ecoles": [
+  	{
+    	"nom": "EHTP – École Hassania des Travaux Publics",
+    	"ville": "Casablanca",
+    	"type": "Public",
+    	"site_web": "https://www.ehtp.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE (MP, PC, PSI, TSI)", "Concours CNC"],
+      	"concours": true,
+      	"description_concours": "L'une des meilleures écoles de génie civil au Maroc. Via CNC exclusivement.",
+      	"numerus_clausus": "~150 places/an"
+    	}
+  	},
+  	{
+    	"nom": "EMI – filière Génie Civil",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["CPGE", "Concours CNC"],
+      	"concours": true,
+      	"description_concours": "Via CNC.",
+      	"numerus_clausus": "~80 places/an"
+    	}
+  	},
+  	{
+    	"nom": "ENSA (réseau 13 écoles) – filière Génie Civil",
+    	"ville": "Agadir, Tanger, Fès, Meknès...",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["CPGE ou BAC+2 scientifique", "CNC ou concours propre ENSA"],
+      	"concours": true,
+      	"description_concours": "Voie CPGE (CNC) ou voie directe après Bac (concours propre).",
+      	"numerus_clausus": "Variable par ENSA"
+    	}
+  	}
+	],
+	"remarques": "Secteur très porteur avec la LGV, la Coupe du Monde 2030, les villes nouvelles et le Plan d'Accélération Industrielle."
+  },
+  {
+	"id": 18,
+	"metier": "Technicien BTP",
+	"secteur": "BTP & Architecture",
+	"description": "Réalisation des travaux de construction, lecture de plans, coordination des équipes sur chantier.",
+	"niveau_requis": "Bac+2 (BTS Génie Civil ou Technicien Spécialisé OFPPT)",
+	"duree_etudes": "2 ans",
+	"salaire_mensuel_mad": { "min": 4000, "max": 9000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Formation OFPPT subventionnée par l'État. Quasi-gratuite.",
+	"debouches": ["Entreprises de construction", "Bureaux d'études techniques", "Communes"],
+	"ecoles": [
+  	{
+    	"nom": "OFPPT – TS Génie Civil / TS Topographie",
+    	"ville": "National",
+    	"type": "Public",
+    	"site_web": "https://www.ofppt.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Techniques ou Sciences Mathématiques de préférence", "Inscription OFPPT"],
+      	"concours": false,
+      	"description_concours": "Sélection sur dossier scolaire.",
+      	"numerus_clausus": "Large capacité"
+    	}
+  	}
+	],
+	"remarques": "Le Maroc a besoin de dizaines de milliers de techniciens BTP pour les grands chantiers de la décennie."
+  },
+  {
+	"id": 19,
+	"metier": "Expert-comptable",
+	"secteur": "Finance",
+	"description": "Tenue et audit des comptes d'entreprises, conseil fiscal, commissariat aux comptes.",
+	"niveau_requis": "Bac+5 + 3 ans stage + examens professionnels (DEC)",
+	"duree_etudes": "5 ans études + 3 ans stage",
+	"salaire_mensuel_mad": { "min": 15000, "max": 60000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse en Master public si conditions de ressources remplies.",
+	"debouches": ["Cabinet d'expertise comptable", "Big 4 (PwC, Deloitte, KPMG, Ernst & Young Maroc)", "Commissariat aux comptes", "DAF en entreprise"],
+	"ecoles": [
+  	{
+    	"nom": "ISCAE – Institut Supérieur de Commerce et d'Administration des Entreprises",
+    	"ville": "Casablanca / Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.iscae.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat pour le Cycle Normal (3 ans)", "Licence/Bac+3 pour le Cycle Supérieur de Gestion (2 ans)", "Concours d'entrée ISCAE"],
+      	"concours": true,
+      	"description_concours": "Concours écrit : Mathématiques, Français/Anglais, Culture Générale + oral. L'une des meilleures écoles de gestion du Maroc.",
+      	"numerus_clausus": "~200 places Cycle Normal / ~80 Cycle Supérieur"
+    	}
+  	},
+  	{
+    	"nom": "ENCG – Écoles Nationales de Commerce et de Gestion",
+    	"ville": "Agadir, Casablanca, El Jadida, Fès, Kénitra, Meknès, Oujda, Settat, Tanger, Tétouan",
+    	"type": "Public",
+    	"site_web": "https://encg.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat (toutes filières)", "Concours national ENCG"],
+      	"concours": true,
+      	"description_concours": "Concours national : Maths, Français, Culture Générale. Organisé chaque année après le Bac.",
+      	"numerus_clausus": "~100-150 places/école"
+    	}
+  	}
+	],
+	"remarques": "Après le diplôme, il faut réussir les examens professionnels de l'OECMA (Ordre des Experts-Comptables du Maroc) pour obtenir le titre."
+  },
+  {
+	"id": 20,
+	"metier": "Banquier / Chargé de clientèle",
+	"secteur": "Finance",
+	"description": "Gestion de portefeuille clients, octroi de crédits, conseil financier en agence bancaire.",
+	"niveau_requis": "Bac+3 (Licence) à Bac+5 (Master Finance/Gestion)",
+	"duree_etudes": "3-5 ans",
+	"salaire_mensuel_mad": { "min": 6000, "max": 15000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les filières publiques universitaires.",
+	"debouches": ["Attijariwafa Bank", "BCP (Banque Centrale Populaire)", "BMCE / Bank of Africa", "CIH Bank", "Société Générale Maroc"],
+	"ecoles": [
+  	{
+    	"nom": "ENCG – filière Finance / Banque",
+    	"ville": "Réseau national",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC", "Concours national ENCG"],
+      	"concours": true,
+      	"description_concours": "Concours national commun.",
+      	"numerus_clausus": "~100-150/école"
+    	}
+  	},
+  	{
+    	"nom": "FSJES – Licence Économie / Gestion + Master Finance",
+    	"ville": "Toutes grandes villes",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC (accès libre en Licence)", "Sélection sur dossier pour Master"],
+      	"concours": false,
+      	"description_concours": "Accès libre Licence / Master sur dossier.",
+      	"numerus_clausus": "Libre Licence / ~40 places Master"
+    	}
+  	}
+	],
+	"remarques": "Secteur bancaire marocain très développé et stable. Bon tremplin pour des postes de management."
+  },
+  {
+	"id": 21,
+	"metier": "Ingénieur agronome",
+	"secteur": "Agriculture",
+	"description": "Amélioration des techniques agricoles, gestion des ressources naturelles, développement de filières agroalimentaires.",
+	"niveau_requis": "Bac+5 (Diplôme d'Ingénieur Agronome)",
+	"duree_etudes": "5 ans",
+	"salaire_mensuel_mad": { "min": 7000, "max": 22000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse à l'IAV Hassan II et ENA Meknès pour les étudiants éligibles.",
+	"debouches": ["Ministère de l'Agriculture", "OCP Group", "Cosumar", "Copag", "FAO / PNUD", "Coopératives agricoles"],
+	"ecoles": [
+  	{
+    	"nom": "IAV Hassan II – Institut Agronomique et Vétérinaire Hassan II",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://www.iav.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE (BCPST de préférence, PC/MP acceptés) ou BAC Sciences avec très mention TB", "Concours d'entrée IAV ou CNC"],
+      	"concours": true,
+      	"description_concours": "Concours propre IAV ou via CNC selon la filière. Épreuves : SVT, Physique-Chimie, Maths, Français. Très sélectif.",
+      	"numerus_clausus": "~200 places/an"
+    	}
+  	},
+  	{
+    	"nom": "ENA Meknès – École Nationale d'Agriculture",
+    	"ville": "Meknès",
+    	"type": "Public",
+    	"site_web": "https://www.enameknes.ac.ma",
+    	"admission": {
+      	"conditions": ["CPGE (BCPST, PC) ou BAC+2 scientifique", "Concours d'entrée ENA Meknès"],
+      	"concours": true,
+      	"description_concours": "Concours écrit et oral propre à l'ENA Meknès.",
+      	"numerus_clausus": "~150 places/an"
+    	}
+  	}
+	],
+	"remarques": "Le secteur agricole représente ~14% du PIB. Fort potentiel avec Generation Green 2020-2030 et l'agroalimentaire export."
+  },
+  {
+	"id": 22,
+	"metier": "Journaliste / Communicant",
+	"secteur": "Art & Médias",
+	"description": "Collecte, vérification et diffusion d'informations via presse écrite, radio, télévision ou web.",
+	"niveau_requis": "Bac+3 à Bac+5 (Licence ou Master Journalisme/Communication)",
+	"duree_etudes": "3-5 ans",
+	"salaire_mensuel_mad": { "min": 5000, "max": 20000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse à l'ISIC pour étudiants éligibles.",
+	"debouches": ["2M, Al Aoula, Medi1TV", "Le360, Médias24, TelQuel, L'Économiste", "MAP (agence officielle)", "Chaînes internationales (Al Jazeera, France 24)"],
+	"ecoles": [
+  	{
+    	"nom": "ISIC – Institut Supérieur de l'Information et de la Communication",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"site_web": "https://isic.ac.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat (toutes filières)", "Concours d'entrée ISIC"],
+      	"concours": true,
+      	"description_concours": "Concours : Culture générale, Français, Arabe + épreuve de rédaction + entretien oral. Très sélectif (~100 places pour ~3 000 candidats).",
+      	"numerus_clausus": "~100 places/an"
+    	}
+  	}
+	],
+	"remarques": "Carte de presse délivrée par la CCPM. La maîtrise de l'arabe, du français et de l'anglais est un atout majeur."
+  },
+  {
+	"id": 23,
+	"metier": "Pilote de ligne",
+	"secteur": "Transport & Logistique",
+	"description": "Conduite d'aéronefs commerciaux, gestion du vol, sécurité des passagers et de l'équipage.",
+	"niveau_requis": "BAC + formation ATPL (Airline Transport Pilot Licence)",
+	"duree_etudes": "2-4 ans",
+	"salaire_mensuel_mad": { "min": 25000, "max": 75000 },
+	"bourse_etat": false,
+	"conditions_bourse": "Pas de bourse d'État. Formation très coûteuse (300 000 – 600 000 MAD). Quelques contrats de formation avec Royal Air Maroc.",
+	"debouches": ["Royal Air Maroc (RAM)", "Air Arabia Maroc", "Aviation d'affaires", "Compagnies internationales"],
+	"ecoles": [
+  	{
+    	"nom": "IATM – Institut Aéronautique et de Formation aux Métiers (Siwane)",
+    	"ville": "Casablanca (Aéroport Mohammed V)",
+    	"type": "Privé",
+    	"site_web": "https://iatm.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences (Maths ou Sciences Exp.)", "Très bonne acuité visuelle (classe médicale 1 OACI)", "Tests psychotechniques", "Anglais ICAO niveau 4 minimum"],
+      	"concours": true,
+      	"description_concours": "Sélection médicale stricte, tests psychotechniques, entretien. Très sélectif médicalement. Formation modulaire CPL/ATPL.",
+      	"numerus_clausus": "~20-40 places/an"
+    	}
+  	}
+	],
+	"remarques": "Après la formation, accumulation des heures de vol nécessaire pour accéder aux postes de commandant de bord. ANAC (Autorité Nationale de l'Aviation Civile) délivre les licences."
+  },
+  {
+	"id": 24,
+	"metier": "Logisticien / Responsable Supply Chain",
+	"secteur": "Transport & Logistique",
+	"description": "Gestion des flux de marchandises, optimisation des transports, gestion des entrepôts et approvisionnements.",
+	"niveau_requis": "Bac+3 à Bac+5",
+	"duree_etudes": "3-5 ans",
+	"salaire_mensuel_mad": { "min": 6000, "max": 20000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les filières publiques universitaires.",
+	"debouches": ["Tanger Med Port Authority", "OCP", "Marjane / BIM / Label'Vie", "DHL / Maersk Maroc", "Renault Tanger / Stellantis"],
+	"ecoles": [
+  	{
+    	"nom": "ENCG – filière Logistique et Transport",
+    	"ville": "Settat, Agadir, Tanger",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC", "Concours national ENCG"],
+      	"concours": true,
+      	"description_concours": "Concours national commun ENCG.",
+      	"numerus_clausus": "~100 places/école"
+    	}
+  	},
+  	{
+    	"nom": "ISET – Institut Supérieur des Études Technologiques (filière Transport-Logistique)",
+    	"ville": "Casablanca, Tanger",
+    	"type": "Privé",
+    	"admission": {
+      	"conditions": ["BAC ou Bac+2", "Dossier + entretien"],
+      	"concours": false,
+      	"description_concours": "Admission sur dossier.",
+      	"numerus_clausus": "Variable"
+    	}
+  	}
+	],
+	"remarques": "Tanger Med est le 1er port d'Afrique et un hub logistique mondial. Très forte demande en professionnels de la supply chain."
+  },
+  {
+	"id": 25,
+	"metier": "Technicien maintenance industrielle",
+	"secteur": "Industrie",
+	"description": "Entretien, réparation et optimisation des machines et équipements industriels.",
+	"niveau_requis": "Bac+2 (BTS ou TS OFPPT Maintenance Industrielle)",
+	"duree_etudes": "2 ans",
+	"salaire_mensuel_mad": { "min": 4000, "max": 10000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Formation OFPPT quasi-gratuite, subventionnée par l'État.",
+	"debouches": ["Renault Maroc (Tanger)", "Stellantis (Kénitra)", "Safran / Boeing (aérospatial)", "OCP (Khouribga / Jorf Lasfar)", "ONEE"],
+	"ecoles": [
+  	{
+    	"nom": "OFPPT – Technicien Spécialisé en Maintenance Industrielle / Électromécanique",
+    	"ville": "National (tous centres OFPPT)",
+    	"type": "Public",
+    	"site_web": "https://www.ofppt.ma",
+    	"admission": {
+      	"conditions": ["Baccalauréat Sciences Techniques, Sciences Mathématiques ou Sciences Exp.", "Inscription plateforme OFPPT"],
+      	"concours": false,
+      	"description_concours": "Sélection sur dossier scolaire. Très accessible.",
+      	"numerus_clausus": "Large capacité nationale"
+    	}
+  	}
+	],
+	"remarques": "Très forte demande dans le secteur automobile et aérospatial. Ces secteurs recrutent massivement au Maroc."
+  },
+  {
+	"id": 26,
+	"metier": "Travailleur social / Éducateur spécialisé",
+	"secteur": "Social & Humanitaire",
+	"description": "Accompagnement des personnes en difficulté sociale, familiale ou économique. Orientation vers les dispositifs d'aide.",
+	"niveau_requis": "Bac+2 à Bac+3 (DTS ou Licence Travail Social)",
+	"duree_etudes": "2-3 ans",
+	"salaire_mensuel_mad": { "min": 3500, "max": 9000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse dans les instituts publics de formation sociale.",
+	"debouches": ["Ministère de la Solidarité", "Communes et préfectures", "ONG (UNICEF, UNHCR, Save the Children)", "INDH (Initiative Nationale pour le Développement Humain)"],
+	"ecoles": [
+  	{
+    	"nom": "ESSAS – École Supérieure de l'Action Sociale",
+    	"ville": "Casablanca",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Baccalauréat", "Concours d'entrée ESSAS"],
+      	"concours": true,
+      	"description_concours": "Concours écrit (Culture générale, Français/Arabe) + entretien de motivation.",
+      	"numerus_clausus": "~80 places/an"
+    	}
+  	},
+  	{
+    	"nom": "ISJS – Institut Supérieur de la Jeunesse et des Sports",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC ou Licence selon le cycle", "Concours ISJS"],
+      	"concours": true,
+      	"description_concours": "Épreuves écrites + tests physiques pour certaines filières.",
+      	"numerus_clausus": "~100 places/an"
+    	}
+  	}
+	],
+	"remarques": "Perspectives de carrière internationale via les ONG (UNICEF, UNHCR, Médecins Sans Frontières)."
+  },
+  {
+	"id": 27,
+	"metier": "Psychologue",
+	"secteur": "Social & Humanitaire",
+	"description": "Évaluation et accompagnement psychologique des individus, thérapies cognitivo-comportementales, bilans.",
+	"niveau_requis": "Bac+5 (Master Psychologie Clinique ou de la Santé)",
+	"duree_etudes": "5 ans",
+	"salaire_mensuel_mad": { "min": 5000, "max": 20000 },
+	"bourse_etat": true,
+	"conditions_bourse": "Bourse universitaire dans le Master public si conditions remplies.",
+	"debouches": ["CHU / Hôpitaux psychiatriques", "Écoles et universités", "Cabinet libéral", "Entreprises (DRH / bien-être au travail)", "ONG humanitaires"],
+	"ecoles": [
+  	{
+    	"nom": "Faculté des Lettres et Sciences Humaines – Département de Psychologie (UM5 Rabat)",
+    	"ville": "Rabat",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["Baccalauréat (toutes filières) pour la Licence", "Sélection sur dossier + entretien pour le Master Clinique"],
+      	"concours": false,
+      	"description_concours": "Accès libre en Licence. Master : dossier académique + entretien de motivation.",
+      	"numerus_clausus": "Libre Licence / ~30-50 places Master"
+    	}
+  	},
+  	{
+    	"nom": "FLSH Fès, Meknès, Casablanca, Agadir, Marrakech – Département Psychologie",
+    	"ville": "Réseau national",
+    	"type": "Public",
+    	"admission": {
+      	"conditions": ["BAC", "Inscription universitaire libre"],
+      	"concours": false,
+      	"description_concours": "Accès libre en Licence.",
+      	"numerus_clausus": "Accès libre"
+    	}
+  	}
+	],
+	"remarques": "La profession de psychologue est en cours de réglementation au Maroc. Fort besoin non satisfait dans les hôpitaux publics et les écoles."
+  }
+]
 {
   "formations": [
     {
