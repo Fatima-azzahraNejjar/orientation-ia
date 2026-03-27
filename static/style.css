@@ -5,3 +5,7 @@ h1{
     font-size: 100 px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+script{
+    margin-bottom: 3 em;
+}
