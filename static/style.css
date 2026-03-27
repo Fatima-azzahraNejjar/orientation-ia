@@ -6,6 +6,6 @@ h1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-script{
-    margin-bottom: 3 em;
+.ai-text{
+    white-space: pre-line;
 }
