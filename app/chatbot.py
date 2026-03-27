@@ -57,8 +57,8 @@ def get_ai_recommendation(user_query):
                 RÈGLES :
                 - Sois encourageant et pro.
                 - Ne mentionne jamais 'SQL', 'base de données' ou 'rows'.
-                - Si les données SQL contiennent des plateformes (ex: UCAS, Unedassis), cite-les !
-                - Si tu ne trouves rien en SQL, réponds avec tes connaissances générales mais précise que c'est en dehors de notre base spécifique."""
+                - Si les données SQL et JSON contiennent des plateformes (ex: UCAS, Unedassis), cite-les !
+                - Si tu ne trouves rien en SQL ou en JSON, réponds avec tes connaissances générales mais précise que c'est en dehors de notre base spécifique."""
             },
             {
                 "role": "user",
