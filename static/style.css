@@ -7,5 +7,10 @@ h1{
 }
 
 .ai-text{
-    white-space: pre-line;
+   white-space: pre-line;
+  line-height: 1.6;
+  max-width: 650 px;
+  margin: 20 px auto;
+  font-size: 16 px;
+  color: #333;
 }
