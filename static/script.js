@@ -1,93 +1,117 @@
-// --- GESTION DE L'AUTHENTIFICATION ---
-
-async function register() {
-    const user = document.getElementById('reg-username').value;
-    const pass = document.getElementById('reg-password').value;
-
-    if (!user || !pass) return alert("Choisis un pseudo et un mot de passe !");
-
-    const formData = new FormData();
-    formData.append('username', user);
-    formData.append('password', pass);
-
-    try {
-        const response = await fetch('/register', { method: 'POST', body: formData });
-        const data = await response.json();
-        alert(data.detail || data.message);
-    } catch (error) {
-        alert("Erreur lors de l'inscription.");
+ function switchTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach((b, i) =>
+            b.classList.toggle('active', (i === 0) === (tab === 'login'))
+        );
+        document.getElementById('panel-login').classList.toggle('active', tab === 'login');
+        document.getElementById('panel-register').classList.toggle('active', tab === 'register');
     }
-}
-
-async function login() {
-    const user = document.getElementById('login-username').value;
-    const pass = document.getElementById('login-password').value;
-
-    if (!user || !pass) return alert("Entre tes identifiants !");
-
-    const formData = new FormData();
-    formData.append('username', user);
-    formData.append('password', pass);
-
-    try {
-        const response = await fetch('/login', { method: 'POST', body: formData });
-        const data = await response.json();
-
-        if (response.ok) {
-            alert("Connexion réussie ! Bonjour " + data.username);
-            // On cache le login et on montre le chat
-            document.getElementById('auth-container').style.display = 'none';
-            document.getElementById('chat-interface').style.display = 'block';
-            
-            // On garde le nom et l'ID dans le navigateur
-            localStorage.setItem('user_id', data.user_id);
-            localStorage.setItem('username', data.username);
-        } else {
-            alert(data.detail || "Erreur de connexion");
+ 
+    async function register() {
+        const user = document.getElementById('reg-username').value.trim();
+        const pass = document.getElementById('reg-password').value;
+        const msg  = document.getElementById('reg-msg');
+        if (!user || !pass) { showMsg(msg, 'Remplis tous les champs.', 'error'); return; }
+        const fd = new FormData();
+        fd.append('username', user); fd.append('password', pass);
+        try {
+            const res  = await fetch('/register', { method: 'POST', body: fd });
+            const data = await res.json();
+            if (res.ok) {
+                showMsg(msg, '✓ Compte créé ! Tu peux te connecter.', 'success');
+                setTimeout(() => switchTab('login'), 1200);
+            } else { showMsg(msg, data.detail || 'Erreur.', 'error'); }
+        } catch { showMsg(msg, 'Serveur inaccessible.', 'error'); }
+    }
+ 
+    async function login() {
+        const user = document.getElementById('login-username').value.trim();
+        const pass = document.getElementById('login-password').value;
+        const msg  = document.getElementById('login-msg');
+        if (!user || !pass) { showMsg(msg, 'Remplis tous les champs.', 'error'); return; }
+        const fd = new FormData();
+        fd.append('username', user); fd.append('password', pass);
+        try {
+            const res  = await fetch('/login', { method: 'POST', body: fd });
+            const data = await res.json();
+            if (res.ok) {
+                localStorage.setItem('user_id', data.user_id);
+                localStorage.setItem('username', data.username);
+                enterChat(data.username);
+            } else { showMsg(msg, data.detail || 'Identifiants incorrects.', 'error'); }
+        } catch { showMsg(msg, 'Serveur inaccessible.', 'error'); }
+    }
+ 
+    function logout() {
+        localStorage.removeItem('user_id');
+        localStorage.removeItem('username');
+        document.getElementById('chat-screen').classList.remove('active');
+        document.getElementById('auth-screen').classList.add('active');
+        document.getElementById('chat-box').innerHTML = `
+            <div class="msg bot">
+                <div class="msg-label">GénérIAtion</div>
+                <div class="msg-bubble">Bonjour ! Je suis votre conseiller d'orientation. Posez-moi vos questions sur les formations, les métiers, les bourses ou les universités — où que vous soyez dans le monde.</div>
+            </div>`;
+    }
+ 
+    function enterChat(username) {
+        document.getElementById('auth-screen').classList.remove('active');
+        document.getElementById('chat-screen').classList.add('active');
+        document.getElementById('sidebar-username').textContent = username;
+        document.getElementById('avatar-letter').textContent = username.charAt(0).toUpperCase();
+    }
+ 
+    function showMsg(el, text, type) {
+        el.textContent = text;
+        el.className = 'auth-msg ' + type;
+    }
+ 
+    async function sendMessage() {
+        const input   = document.getElementById('user-input');
+        const chatBox = document.getElementById('chat-box');
+        const sendBtn = document.getElementById('send-btn');
+        const message = input.value.trim();
+        if (!message) return;
+ 
+        chatBox.innerHTML += `
+            <div class="msg user">
+                <div class="msg-label">${localStorage.getItem('username') || 'Vous'}</div>
+                <div class="msg-bubble">${escHtml(message)}</div>
+            </div>`;
+        input.value = '';
+        sendBtn.disabled = true;
+        chatBox.scrollTop = chatBox.scrollHeight;
+ 
+        const id = 'think-' + Date.now();
+        chatBox.innerHTML += `
+            <div class="msg bot" id="${id}">
+                <div class="msg-label">GénérIAtion</div>
+                <div class="msg-bubble thinking"><span></span><span></span><span></span></div>
+            </div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+ 
+        try {
+            const res  = await fetch(`/ask?question=${encodeURIComponent(message)}`);
+            const data = await res.json();
+            document.getElementById(id).querySelector('.msg-bubble').innerHTML = escHtml(data.bot).replace(/\n/g, '<br>');
+        } catch {
+            document.getElementById(id).querySelector('.msg-bubble').textContent = "Erreur : impossible de joindre l'IA.";
         }
-    } catch (error) {
-        alert("Le serveur ne répond pas.");
+ 
+        sendBtn.disabled = false;
+        chatBox.scrollTop = chatBox.scrollHeight;
     }
-}
-
-// --- GESTION DU CHAT ---
-
-async function sendMessage() {
-    const input = document.getElementById("user-input");
-    const chatBox = document.getElementById("chat-box");
-    const message = input.value;
-
-    if (!message) return;
-
-    // 1. Afficher le message de l'utilisateur
-    chatBox.innerHTML += `<div class="user-msg"><b>Moi:</b> ${message}</div>`;
-    input.value = ""; 
-
-    // 2. Afficher le message de chargement
-    const loadingId = "loading-" + Date.now();
-    chatBox.innerHTML += `<div class="bot-msg" id="${loadingId}"><i>L'IA réfléchit...</i></div>`;
-    chatBox.scrollTop = chatBox.scrollHeight;
-
-    try {
-        // 3. Appel à FastAPI
-        const response = await fetch(`/ask?question=${encodeURIComponent(message)}`);
-        const data = await response.json();
-
-        // 4. AFFICHE LA RéPONSE DE L'ia
-        document.getElementById(loadingId).innerHTML = `<b>IA:</b> ${data.bot}`;
-    } catch (error) {
-        document.getElementById(loadingId).innerText = "Erreur : Impossible de joindre l'IA.";
+ 
+    function escHtml(str) {
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
-
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-// Bonus : Envoyer avec la touche "Entrée"
-document.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        const activeEl = document.activeElement.id;
-        if (activeEl === 'user-input') sendMessage();
-        if (activeEl === 'login-password') login();
-        if (activeEl === 'reg-password') register();
-    }
-});
+ 
+    document.addEventListener('keydown', e => {
+        if (e.key !== 'Enter') return;
+        const id = document.activeElement?.id;
+        if (id === 'user-input')     sendMessage();
+        if (id === 'login-password') login();
+        if (id === 'reg-password')   register();
+    });
+ 
+    const savedUser = localStorage.getItem('username');
+    if (savedUser) enterChat(savedUser);
