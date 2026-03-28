@@ -1,4 +1,4 @@
- function togglePw(inputId, btn) {
+    function togglePw(inputId, btn) {
         const input = document.getElementById(inputId);
         const show  = input.type === 'password';
         input.type  = show ? 'text' : 'password';
