@@ -1,4 +1,11 @@
- function switchTab(tab) {
+ function togglePw(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const show  = input.type === 'password';
+        input.type  = show ? 'text' : 'password';
+        btn.textContent = show ? '🙈' : '👁';
+    }
+ 
+    function switchTab(tab) {
         document.querySelectorAll('.tab-btn').forEach((b, i) =>
             b.classList.toggle('active', (i === 0) === (tab === 'login'))
         );
