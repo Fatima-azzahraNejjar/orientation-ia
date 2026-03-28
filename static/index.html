@@ -2,18 +2,20 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Orientation IA - Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GénérIAtion — Orientation Intelligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="app">
- 
+
     <header>
         <div class="logo">Génér<span>IA</span>tion</div>
         <div class="header-tag">Orientation Intelligente — Partout dans le monde</div>
     </header>
- 
+
     <!-- AUTH -->
     <div id="auth-screen" class="screen active">
         <div class="auth-card">
@@ -21,7 +23,7 @@
                 <button class="tab-btn active" onclick="switchTab('login')">Connexion</button>
                 <button class="tab-btn" onclick="switchTab('register')">Inscription</button>
             </div>
- 
+
             <div id="panel-login" class="auth-panel active">
                 <label class="auth-label">Pseudo</label>
                 <input class="auth-input" type="text" id="login-username" placeholder="votre pseudo" autocomplete="username">
@@ -33,7 +35,7 @@
                 <button class="auth-btn" onclick="login()">→ Se connecter</button>
                 <div class="auth-msg" id="login-msg"></div>
             </div>
- 
+
             <div id="panel-register" class="auth-panel">
                 <label class="auth-label">Pseudo</label>
                 <input class="auth-input" type="text" id="reg-username" placeholder="choisir un pseudo" autocomplete="username">
@@ -47,7 +49,7 @@
             </div>
         </div>
     </div>
- 
+
     <!-- CHAT -->
     <div id="chat-screen" class="screen">
         <aside class="sidebar">
@@ -56,7 +58,7 @@
                 <div class="avatar" id="avatar-letter">?</div>
                 <div class="sidebar-username" id="sidebar-username">—</div>
             </div>
- 
+
             <div class="sidebar-title">Exemples</div>
             <div class="sidebar-hint">
                 <strong>Orientation</strong>
@@ -70,30 +72,32 @@
                 <strong>Financement</strong>
                 Quelles bourses pour étudier en Europe ?
             </div>
- 
+
             <button class="logout-btn" onclick="logout()">↩ Se déconnecter</button>
         </aside>
- 
+
         <div class="chat-main">
             <div class="chat-topbar">
                 <div class="chat-topbar-title">Conseiller d'orientation</div>
                 <div class="status-dot"><div class="dot"></div>IA en ligne</div>
             </div>
- 
+
             <div id="chat-box">
                 <div class="msg bot">
                     <div class="msg-label">GénérIAtion</div>
                     <div class="msg-bubble">Bonjour ! Je suis votre conseiller d'orientation. Posez-moi vos questions sur les formations, les métiers, les bourses ou les universités — où que vous soyez dans le monde.</div>
                 </div>
             </div>
- 
+
             <div class="chat-input-zone">
                 <input type="text" id="user-input" placeholder="Ex : Licence de droit à Paris, bourses au Canada…">
                 <button id="send-btn" onclick="sendMessage()">Envoyer →</button>
             </div>
         </div>
     </div>
- 
+
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
