@@ -1,3 +1,11 @@
+// ── SIDEBAR MOBILE ──
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+}
+
 // ── MOT DE PASSE VISIBLE / CACHÉ ──
 function togglePw(inputId, btn) {
     const input = document.getElementById(inputId);

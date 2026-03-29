@@ -82,6 +82,9 @@
             <button class="logout-btn" onclick="logout()">↩ Se déconnecter</button>
         </aside>
 
+        <!-- overlay pour fermer la sidebar sur mobile -->
+        <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
         <div class="chat-main">
             <div id="guest-banner" style="display:none;">
                 <div class="guest-banner-inner">
@@ -90,6 +93,9 @@
                 </div>
             </div>
             <div class="chat-topbar">
+                <button class="burger-btn" onclick="toggleSidebar()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
                 <div class="chat-topbar-title">Conseiller d'orientation</div>
                 <div class="status-dot"><div class="dot"></div>IA en ligne</div>
             </div>
