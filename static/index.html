@@ -47,6 +47,12 @@
                 <button class="auth-btn" onclick="register()">✦ Créer mon compte</button>
                 <div class="auth-msg" id="reg-msg"></div>
             </div>
+
+            <!-- BOUTON INVITÉ -->
+            <div class="guest-zone">
+                <button class="guest-btn" onclick="enterGuest()">Continuer sans compte →</button>
+                <div class="guest-info">Accès limité à 3 questions</div>
+            </div>
         </div>
     </div>
 
@@ -77,6 +83,12 @@
         </aside>
 
         <div class="chat-main">
+            <div id="guest-banner" style="display:none;">
+                <div class="guest-banner-inner">
+                    ⚡ Mode invité — <span id="questions-left">3</span> question(s) restante(s)
+                    <button onclick="switchTab('register'); document.getElementById('auth-screen').classList.add('active'); document.getElementById('chat-screen').classList.remove('active');">Créer un compte →</button>
+                </div>
+            </div>
             <div class="chat-topbar">
                 <div class="chat-topbar-title">Conseiller d'orientation</div>
                 <div class="status-dot"><div class="dot"></div>IA en ligne</div>
@@ -95,8 +107,9 @@
             </div>
         </div>
     </div>
-    
+
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>

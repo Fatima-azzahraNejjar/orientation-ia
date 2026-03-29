@@ -464,3 +464,62 @@ header {
 #send-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 #send-btn:active { transform: translateY(0); }
 #send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+/* ── MODE INVITÉ ── */
+.guest-zone {
+    border-top: 1px solid var(--border);
+    padding: 18px 32px 24px;
+    text-align: center;
+}
+
+.guest-btn {
+    background: none;
+    border: none;
+    color: var(--grey);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 6px 0;
+}
+.guest-btn:hover { color: var(--white); }
+
+.guest-info {
+    font-size: 0.65rem;
+    color: #555;
+    margin-top: 5px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+}
+
+/* bannière invité dans le chat */
+.guest-banner-inner {
+    background: rgba(200,184,154,0.08);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.guest-banner-inner button {
+    margin-left: auto;
+    background: var(--accent);
+    color: var(--black);
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: opacity 0.2s;
+}
+.guest-banner-inner button:hover { opacity: 0.85; }

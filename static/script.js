@@ -78,6 +78,8 @@ async function login() {
 function logout() {
     localStorage.removeItem('user_id');
     localStorage.removeItem('username');
+    sessionStorage.removeItem('guest_questions');
+    document.getElementById('guest-banner').style.display = 'none';
     document.getElementById('chat-screen').classList.remove('active');
     document.getElementById('auth-screen').classList.add('active');
     document.getElementById('chat-box').innerHTML = `
@@ -95,6 +97,29 @@ function enterChat(username) {
     document.getElementById('avatar-letter').textContent = username.charAt(0).toUpperCase();
 }
 
+// ── MODE INVITÉ ──
+const GUEST_LIMIT = 3;
+
+function enterGuest() {
+    sessionStorage.setItem('guest_questions', GUEST_LIMIT);
+    document.getElementById('auth-screen').classList.remove('active');
+    document.getElementById('chat-screen').classList.add('active');
+    document.getElementById('sidebar-username').textContent = 'Invité';
+    document.getElementById('avatar-letter').textContent = '?';
+    document.getElementById('guest-banner').style.display = 'block';
+    updateGuestCounter();
+}
+
+function updateGuestCounter() {
+    const left = parseInt(sessionStorage.getItem('guest_questions') || 0);
+    const el = document.getElementById('questions-left');
+    if (el) el.textContent = left;
+}
+
+function isGuest() {
+    return !localStorage.getItem('username') && sessionStorage.getItem('guest_questions') !== null;
+}
+
 // ── AFFICHER UN MESSAGE D'ÉTAT ──
 function showMsg(el, text, type) {
     el.textContent = text;
@@ -109,6 +134,26 @@ async function sendMessage() {
     const message = input.value.trim();
 
     if (!message) return;
+
+    // Vérification limite invité
+    if (isGuest()) {
+        const left = parseInt(sessionStorage.getItem('guest_questions') || 0);
+        if (left <= 0) {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `
+                <div class="msg bot">
+                    <div class="msg-label">GénérIAtion</div>
+                    <div class="msg-bubble" style="border-left-color:#e07070;">
+                        Tu as atteint la limite de 3 questions en mode invité. 
+                        <strong>Crée un compte gratuitement</strong> pour continuer !
+                    </div>
+                </div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+            return;
+        }
+        sessionStorage.setItem('guest_questions', left - 1);
+        updateGuestCounter();
+    }
 
     // Message de l'utilisateur
     chatBox.innerHTML += `
