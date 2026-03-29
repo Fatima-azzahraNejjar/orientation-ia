@@ -156,6 +156,7 @@ header {
     border-radius: var(--radius);
 }
 
+.auth-input { font-size: max(16px, 0.9rem) !important; } /* empêche le zoom Safari */
 .auth-input:focus { border-color: var(--accent); }
 .auth-input::placeholder { color: #555; }
 
@@ -446,6 +447,7 @@ header {
     transition: border-color 0.2s;
 }
 
+#user-input { font-size: max(16px, 0.88rem); } /* empêche le zoom Safari */
 #user-input:focus { border-color: var(--accent); }
 #user-input::placeholder { color: #555; }
 
