@@ -461,6 +461,7 @@ header {
     white-space: nowrap;
 }
 
+
 #send-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 #send-btn:active { transform: translateY(0); }
 #send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
