@@ -13,6 +13,7 @@
 
 html, body {
     height: 100%;
+    height: -webkit-fill-available;
     background: var(--black);
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
@@ -25,6 +26,7 @@ html, body {
     display: grid;
     grid-template-rows: 56px 1fr;
     height: 100vh;
+    height: 100dvh; /* dynamic viewport — corrige Safari iPhone */
 }
 
 /* ── HEADER ── */
@@ -423,6 +425,7 @@ header {
 /* input zone */
 .chat-input-zone {
     padding: 18px 28px;
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
     border-top: 1px solid var(--border);
     display: flex;
     gap: 12px;
