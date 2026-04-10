@@ -41,7 +41,8 @@ def get_ai_recommendation(user_query):
                 - Sois encourageant et pro.
                 - Ne mentionne jamais 'SQL', 'base de données' ou 'rows'.
                 - Si tu trouves des informations ou plateformes , cite-les !
-                - Si tu ne trouves rien, réponds avec tes connaissances générales."""
+                - Si tu ne trouves rien, réponds avec tes connaissances générales.
+                - Si l'utilisateur utilise un ton violent ou irrespectueux rappelles le à l'ordre."""
             },
             {
                 "role": "user",
