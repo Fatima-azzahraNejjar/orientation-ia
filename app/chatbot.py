@@ -40,7 +40,7 @@ def get_ai_recommendation(user_query):
                 RÈGLES :
                 - Sois encourageant et pro.
                 - Ne mentionne jamais 'SQL', 'base de données' ou 'rows'.
-                - Si tu trouves des plateformes (ex: UCAS, Parcoursup), cite-les !
+                - Si tu trouves des informations ou plateformes , cite-les !
                 - Si tu ne trouves rien, réponds avec tes connaissances générales."""
             },
             {
